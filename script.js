@@ -39,7 +39,7 @@ document.getElementById('taskForm').addEventListener('submit', function(event) {
     const date = document.getElementById('date').value;
 
     // Enviar los datos al script de Google Apps
-   fetch('https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbxRn_4s2UvhDFuc_tlLHdyFj745PHpqCjjWCnZ0Se_9kr5GghICA1vQYc0U1oX17t9jOQ/exec/exec', {
+   fetch('https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzNb-MBp2lMYf0adGa72p3NL5pgAv6kJQkL1OJMdft4s8NJV-9RVyZVDikpGxboIGIwJw/exec/exec', {
         
         method: 'POST',
         headers: {
