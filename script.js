@@ -32,3 +32,29 @@ document.getElementById('taskForm').addEventListener('submit', function(e) {
     // Mostrar la confirmación
     showSection('confirmation');
 });
+document.getElementById('taskForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevenir el envío normal del formulario
+
+    const task = document.getElementById('task').value;
+    const date = document.getElementById('date').value;
+
+    // Enviar los datos al script de Google Apps
+    fetch('https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzijD5yRfqYWpQElgfXUv0sQv_bnfL4ETGfF2pgHxs1aAqZ50EtUN-nq21Lnq750rbj/exec/exec', {
+        
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ task: task, date: date })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Tarea enviada correctamente!');
+        } else {
+            alert('Error al enviar la tarea.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
