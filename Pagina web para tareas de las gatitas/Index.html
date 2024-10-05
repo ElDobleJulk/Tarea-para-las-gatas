@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas - Gatas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Tareas</h1>
+    </header>
+
+    <!-- Menú principal -->
+    <section class="menu">
+        <button class="menu-btn" onclick="showSection('addTask')">Añadir Tarea</button>
+        <button class="menu-btn" onclick="showSection('viewTasks')">Ver Tareas</button>
+    </section>
+
+    <!-- Sección para añadir tarea -->
+    <section id="addTask" class="section">
+        <h2>Añadir Nueva Tarea</h2>
+        <form id="taskForm">
+            <label for="taskName">Tarea:</label>
+            <input type="text" id="taskName" name="taskName" required>
+
+            <label for="taskStatus">Estado:</label>
+            <input type="text" id="taskStatus" name="taskStatus" required>
+
+            <label for="taskOwner">Propietario:</label>
+            <input type="text" id="taskOwner" name="taskOwner" required>
+
+            <label for="taskPhase">Fase:</label>
+            <input type="text" id="taskPhase" name="taskPhase">
+
+            <label for="taskDate">Fecha de Entrega:</label>
+            <input type="date" id="taskDate" name="taskDate" required>
+
+            <label for="taskNotes">Notas:</label>
+            <textarea id="taskNotes" name="taskNotes"></textarea>
+
+            <button type="submit">Añadir</button>
+        </form>
+    </section>
+
+    <!-- Confirmación -->
+    <section id="confirmation" class="section">
+        <h2>¡Tarea añadida con éxito!</h2>
+        <button onclick="goToMenu()">Volver al Menú</button>
+    </section>
+
+    <!-- Sección de visualización de tareas (placeholder) -->
+    <section id="viewTasks" class="section">
+        <h2>Lista de Tareas</h2>
+        <!-- Aquí se podría añadir la lista de tareas -->
+        <button onclick="goToMenu()">Volver al Menú</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
